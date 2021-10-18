@@ -41,9 +41,9 @@
 		color: #fff
 
 	&:active
-		border: 1px solid #fff
 		background: $accent
 		color: #fff
+		transform: translate(2px, 1px)
 
 	&--banner
 		max-width: 240px
@@ -74,6 +74,11 @@
 		align-items: center
 		gap: 10px
 
+		+r(576)
+			max-width: 140px
+			font-size: 12px
+			height: 30px
+
 	&--consult
 		max-width: 230px
 		width: 100%
@@ -85,7 +90,13 @@
 		display: flex
 		align-items: center
 		gap: 10px
-		padding: 0
+		padding: 5px
+
+		+r(576)
+			max-width: 180px
+			font-size: 12px
+			height: 30px
+			gap: 5px
 
 	&--look
 		max-width: 240px
@@ -163,23 +174,28 @@
 	height: 18px
 	margin-right: 15px
 	outline: none
+	display: none
+	z-index: 100
+
+	+r(992)
+		display: block
 
 	&:hover
 		span
-			background-color: $accent
+			background-color: #fff
 
 			&::before,
 			&::after
-				background-color: $accent
+				background-color: #fff
 
 	&__item
 		position: absolute
 		right: 0
 		top: 50%
 		// transform: translate(0, -50%)
-		width: 12px
+		width: 25px
 		height: 2px
-		background-color: $text
+		background-color: #fff
 		border-radius: 4px
 		+transition
 		bottom: 0
@@ -190,13 +206,13 @@
 			display: block
 			position: absolute
 			right: 0
-			background-color: $text
+			background-color: #fff
 			height: 2px
 			+transition
 
 		&::before
 			top: 7px
-			width: 18px
+			width: 25px
 
 		&::after
 			top: -7px
@@ -211,7 +227,7 @@
 
 				&::before,
 				&::after
-					background-color: $accent
+					background-color: rgba(178, 178, 178, 0.7)
 
 		.hamburger__item
 			background-color: transparent
@@ -220,12 +236,13 @@
 				top: 0
 				width: 25px
 				transform: rotate(45deg)
+				background-color: rgba(178, 178, 178, 0.7)
 
 			&::after
 				top: 0
 				width: 25px
 				transform: rotate(-45deg)
-
+				background-color: rgba(178, 178, 178, 0.7)
 
 .header
 	position: fixed
@@ -233,7 +250,7 @@
 	right: 0
 	left: 0
 	padding: 20px 0
-	z-index: 100
+	z-index: 50
 	+transition
 
 	+r(576)
@@ -244,6 +261,7 @@
 
 	&__logo
 		display: block
+		z-index: 100
 
 		&:hover
 			a, span
@@ -270,8 +288,20 @@
 					color:#B7B7B7
 
 	&__nav
+		+transition
+
 		+r(992)
-			display: none
+			position: fixed
+			top: 0
+			right: -100%
+			bottom: 0
+			background: #1F1F1F
+			z-index: 50
+			width: 100vw
+			height: 100%
+			padding: 100px 15px
+			overflow: auto
+			box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.55)
 
 		ul
 			display: flex
@@ -281,12 +311,44 @@
 
 			+r(1200)
 				gap: 25px
+
+			+r(992)
+				display: flex
+				flex-direction: column
+				gap: 20px
+				margin-bottom: 60px
+
 		a
 			&:first-child
 				font-variant: normal
 			font-variant: small-caps
 			color: #fff
 			@extend .link
+
+		&_mobile
+			display: none
+			+r(992)
+				display: block
+				background: rgba(255, 255, 255, 0.1)
+				backdrop-filter: blur(4px)
+				padding: 10px 40px
+
+			p
+				color: #fff
+				text-align: center
+				margin-bottom: 15px
+
+		&_social
+			display: flex
+			justify-content: center
+			gap: 15px
+
+			svg
+				width: 24px
+				height: 24px
+
+		&--active
+			right: 0
 
 	&__phone
 		display: flex
@@ -327,8 +389,8 @@
 			padding: 0
 
 		a
-			color: #fff
 			&:last-child
+				color: #fff
 				@extend .link
 				+r(767)
 					display: none
@@ -502,6 +564,7 @@
 
 	+r(767)
 		padding-top: 60px
+		padding-bottom: 15px
 
 	&__container
 		p
@@ -540,8 +603,9 @@
 
 	&__grid
 		display: grid
-		grid-template-columns: 50% 25% 25%
+		grid-template-columns: 49% 25% 25%
 		grid-auto-rows: 200px
+		justify-content: center
 		gap: 2px
 
 		+r(992)
@@ -570,7 +634,22 @@
 	background-position: bottom
 	background-repeat: no-repeat
 
+	+r(767)
+		padding-bottom: 115px
+		background-size: 600px
+		background-position-y: 90%
+
+	&__container
+		+r(576)
+			padding: 0 0
+
 	&__content
+		padding: 160px 0 60px 70px
+		background: url(../img/garantsell.jpg)
+		+cover
+
+		+r(576)
+			padding: 230px 15px 30px 15px
 
 		h3
 			font-family: $f_title
@@ -579,8 +658,16 @@
 			color: #fff
 			margin-bottom: 20px
 
+			+r(576)
+				font-size: 20px
+				color: #EAD583
+
 		ul
 			margin-bottom: 35px
+
+			+r(576)
+				margin-bottom: 15px
+
 			li
 				font-family: $f_title
 				font-size: 18px
@@ -590,14 +677,18 @@
 				gap: 10px
 				align-items: center
 
-	&__content
-		padding: 160px 0 60px 70px
-		background: url(../img/garantsell.jpg)
-		+cover
+				+r(576)
+					margin-bottom: 0
 
 	&__btn
 		display: flex
 		gap: 20px
+
+		+r(576)
+			gap: 10px
+
+		+r(350)
+			flex-direction: column
 
 .team
 	background: url(../img/team.jpg)
@@ -618,9 +709,24 @@
 			max-width: 570px
 			color: #B2B2B2
 
+			+r(767)
+				font-size: 16px
+
+	&__title
+		+r(992)
+			font-size: 35px
+
+		+r(767)
+			font-size: 30px
+			font-weight: 700
+
 .gallery
 	padding-top: 60px
 	padding-bottom: 80px
+
+	+r(767)
+		padding-top: 40px
+		padding-bottom: 50px
 
 	&__content
 		display: flex
@@ -628,6 +734,15 @@
 		max-width: 1200px
 		margin: auto
 		margin-bottom: 60px
+
+		+r(1200)
+			margin-bottom: 40px
+
+		+r(992)
+			margin-bottom: 35px
+
+		+r(576)
+			margin-bottom: 30px
 
 	&__logo
 		display: flex
@@ -647,40 +762,102 @@
 	&__grid
 		display: grid
 		grid-template-columns: repeat(6, 200px)
-		grid-template-rows: 200px 200px
+		grid-auto-rows: 50%
 		justify-content: center
+
+		+r(1200)
+			grid-template-columns: repeat(6, 16%)
+			grid-auto-rows: 50%
+
+		+r(576)
+			grid-template-columns: repeat(3, 33%)
+			grid-auto-rows: 33%
+			margin-bottom: 25px
 
 		img
 			width: 100%
 			height: 100%
 			object-fit: cover
 
+		&_mobile
+			+r(576)
+				display: none
+
+	&__btn
+		+r(576)
+			display: none
+
+		&_mobile
+			display: none
+			
+			+r(576)
+				display: block
+				margin: auto
+
 .footer
 	background: #1F1F1F
 	padding: 40px 0
+
+	+r(767)
+		padding: 30px 0
 
 	&__block
 		display: flex
 		gap: 90px
 		margin-bottom: 40px
 
+		+r(1200)
+			justify-content: space-between
+
+		+r(767)
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			margin-bottom: 30px
+			gap: 0
+
 	&__item
 		&:last-child
 			margin-left: 160px
+			+r(576)
+				width: 100%
+
+			+r(1200)
+				margin-left: 0
+				flex-shrink: 0
+
+			+r(767)
+				display: flex
+				flex-direction: column-reverse
+				align-items: center
 
 		p
 			font-size: 14px
 			color: #fff
 			font-weight: 300
+			+r(992)
+				br
+					display: none
 
 		h4
 			font-size: 20px
 			color: #fff
 			padding-top: 15px
 
+			+r(767)
+				display: none
+
+	&__txt
+		+r(992)
+			display: none
+
 	&__logo
 		display: block
 		margin-bottom: 25px
+
+		+r(767)
+			text-align: center
+			margin-bottom: 0
 
 		&:hover
 			a, span
@@ -695,25 +872,44 @@
 			color: #fff
 			+transition
 
+			+r(576)
+				font-size: 20px
+
 			span
 				font-size: 20px
 				font-weight: 400
 				color: #B7B7B7
 				+transition
 
+				+r(576)
+					font-size: 16px
+
 	&__list
 		display: flex
 		gap: 90px
+
+		+r(992)
+			gap: 30px
+
+		+r(767)
+			gap: 90px
+			margin-bottom: 20px
 
 		ul
 			margin-top: 30px
 			li
 				margin-bottom: 10px
 
+			+r(767)
+				margin-top: 20px
+
 		a
 			font-size: 18px
 			color: #D2D2D2
 			@extend .link
+
+			+r(576)
+				font-size: 16px
 
 	&__contact
 		margin-bottom: 25px
@@ -741,6 +937,8 @@
 		display: flex
 		gap: 20px
 
+		+r(576)
+			padding: 8px
 
 		svg, path
 			fill: #fff
@@ -753,12 +951,18 @@
 		display: flex
 		justify-content: space-between
 
+		+r(576)
+			flex-direction: column-reverse
+			align-items: center
+			gap: 5px
+
 		p
 			font-weight: 300
 			color: #fff
 
 		a
 			color: #fff
+
 
 .bg-cover
 	background-repeat: no-repeat !important
@@ -769,6 +973,16 @@
 	border: 1px solid rgba(255, 255, 255, 0.05)
 	width: 100%
 	margin-bottom: 40px
+
+	+r(576)
+		display: none
+
+	&--mobile
+		border: 1px solid rgba(255, 255, 255, 0.05)
+		width: 100%
+		display: none
+		+r(576)
+			display: block
 
 
 
