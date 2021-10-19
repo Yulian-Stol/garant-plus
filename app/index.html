@@ -44,6 +44,23 @@
 
 			<div class="header__phone">
 				<a href="#" class="header__search">
+					<div class="header__search_wrap">
+
+						<form action="" method="get">
+							<input name="search" class="header__search_input" placeholder="Поиск" type="search" required>
+							<button class="btn--loop" type="submit">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6041 12.4159L18.0875 16.8993C18.2451 17.057 18.3335 17.2708 18.3335 17.4937C18.3334 17.7167 18.2447 17.9304 18.0871 18.088C17.9294 18.2456 17.7155 18.3341 17.4926 18.334C17.2697 18.3339 17.0559 18.2453 16.8983 18.0876L12.415 13.6043C11.0747 14.6423 9.38937 15.1308 7.70174 14.9704C6.01412 14.81 4.451 14.0126 3.33037 12.7406C2.20975 11.4686 1.61579 9.81746 1.66935 8.12307C1.7229 6.42868 2.41993 4.81833 3.61864 3.61962C4.81735 2.4209 6.4277 1.72387 8.12209 1.67032C9.81648 1.61677 11.4676 2.21072 12.7396 3.33135C14.0117 4.45197 14.809 6.01509 14.9694 7.70272C15.1299 9.39034 14.6414 11.0757 13.6033 12.4159H13.6041ZM8.3333 13.3334C9.65938 13.3334 10.9312 12.8067 11.8688 11.869C12.8065 10.9313 13.3333 9.65953 13.3333 8.33345C13.3333 7.00736 12.8065 5.73559 11.8688 4.79791C10.9312 3.86023 9.65938 3.33345 8.3333 3.33345C7.00722 3.33345 5.73545 3.86023 4.79777 4.79791C3.86009 5.73559 3.3333 7.00736 3.3333 8.33345C3.3333 9.65953 3.86009 10.9313 4.79777 11.869C5.73545 12.8067 7.00722 13.3334 8.3333 13.3334Z" fill="white" fill-opacity="0.7"/>
+								</svg>
+							</button>
+							<button class="btn--close">
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M8.89501 10.0003L3.19751 15.6978L4.30251 16.8028L10 11.1053L15.6975 16.8028L16.8025 15.6978L11.105 10.0003L16.8025 4.30275L15.6975 3.19775L10 8.89525L4.30251 3.19775L3.19751 4.30275L8.89501 10.0003Z" fill="#B2B2B2" fill-opacity="0.7"/>
+								</svg>
+							</button>
+						</form>
+
+					</div>
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M13.6041 12.4159L18.0875 16.8993C18.2451 17.057 18.3335 17.2708 18.3335 17.4937C18.3334 17.7167 18.2447 17.9304 18.0871 18.088C17.9294 18.2456 17.7155 18.3341 17.4926 18.334C17.2697 18.3339 17.0559 18.2453 16.8983 18.0876L12.415 13.6043C11.0747 14.6423 9.38937 15.1308 7.70174 14.9704C6.01412 14.81 4.451 14.0126 3.33037 12.7406C2.20975 11.4686 1.61579 9.81746 1.66935 8.12307C1.7229 6.42868 2.41993 4.81833 3.61864 3.61962C4.81735 2.4209 6.4277 1.72387 8.12209 1.67032C9.81648 1.61677 11.4676 2.21072 12.7396 3.33135C14.0117 4.45197 14.809 6.01509 14.9694 7.70272C15.1299 9.39034 14.6414 11.0757 13.6033 12.4159H13.6041ZM8.3333 13.3334C9.65938 13.3334 10.9312 12.8067 11.8688 11.869C12.8065 10.9313 13.3333 9.65953 13.3333 8.33345C13.3333 7.00736 12.8065 5.73559 11.8688 4.79791C10.9312 3.86023 9.65938 3.33345 8.3333 3.33345C7.00722 3.33345 5.73545 3.86023 4.79777 4.79791C3.86009 5.73559 3.3333 7.00736 3.3333 8.33345C3.3333 9.65953 3.86009 10.9313 4.79777 11.869C5.73545 12.8067 7.00722 13.3334 8.3333 13.3334Z" fill="white" fill-opacity="0.7"/>
 					</svg>
@@ -62,60 +79,58 @@
 	</header>
 
 	<section class="banner">
-		<div class="banner__container">
-			<div class="hero__slider">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="banner__info">
-							<div class="banner__text">
-								<h4>3-к квартира</h4>
-								<p>43 м² - 3 000 000₽</p>
-								<p>Липецк, Логовая 6</p>
-								<button class="btn btn--banner">Подробнее</button>
-							</div>
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="banner__info">
-							<div class="banner__text">
-								<h4>3-к квартира</h4>
-								<p>43 м² - 3 000 000₽</p>
-								<p>Липецк, Логовая 6</p>
-								<button class="btn btn--banner">Подробнее</button>
-							</div>
+		<div class="hero__slider">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="banner__info">
+						<div class="banner__text">
+							<h4>3-к квартира</h4>
+							<p>43 м² - 3 000 000₽</p>
+							<p>Липецк, Логовая 6</p>
+							<button class="btn btn--banner">Подробнее</button>
 						</div>
 					</div>
 				</div>
-
-				<div class="hero__pagination"></div>
-
-				<div class="hero__next">
-					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M26.2773 8.38916L37.8853 19.9998L26.2773 31.6105L24.3893 29.7225L32.7813 21.3332H2.66663V18.6665H32.7813L24.3893 10.2772L26.2773 8.38916Z" fill="white"/>
-					</svg>
+				<div class="swiper-slide">
+					<div class="banner__info">
+						<div class="banner__text">
+							<h4>3-к квартира</h4>
+							<p>43 м² - 3 000 000₽</p>
+							<p>Липецк, Логовая 6</p>
+							<button class="btn btn--banner">Подробнее</button>
+						</div>
+					</div>
 				</div>
-				<div class="hero__prev">
-					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" clip-rule="evenodd" d="M13.7226 31.6108L2.11465 20.0002L13.7226 8.38951L15.6106 10.2775L7.21865 18.6668L37.3333 18.6668V21.3335L7.21865 21.3335L15.6106 29.7228L13.7226 31.6108Z" fill="white"/>
-					</svg>
-				</div>
+			</div>
+
+			<div class="hero__pagination"></div>
+
+			<div class="hero__next">
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M26.2773 8.38916L37.8853 19.9998L26.2773 31.6105L24.3893 29.7225L32.7813 21.3332H2.66663V18.6665H32.7813L24.3893 10.2772L26.2773 8.38916Z" fill="white"/>
+				</svg>
+			</div>
+			<div class="hero__prev">
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M13.7226 31.6108L2.11465 20.0002L13.7226 8.38951L15.6106 10.2775L7.21865 18.6668L37.3333 18.6668V21.3335L7.21865 21.3335L15.6106 29.7228L13.7226 31.6108Z" fill="white"/>
+				</svg>
 			</div>
 		</div>
 	</section>
 
 	<section class="house">
-		<div class="house__container container">
+		<div class="container">
 			<div class="house__select">
-				<div class="form__item form__house">
-					<label for="select-buy" class="form__label form__label_house">Тип чего-то</label>
+				<div class="form__house">
+					<label for="select-buy" class="form__label">Тип чего-то</label>
 					<select id="select-buy" name="select-buy" class="form__select">
 						<option value="#" selected="selected">Продажа</option>
 						<option value="#">Аренда</option>
 					</select>
 				</div>
 
-				<div class="form__item form__house">
-					<label for="select-house" class="form__label form__label_house">Тип недвижимости</label>
+				<div class="form__house">
+					<label for="select-house" class="form__label">Тип недвижимости</label>
 					<select id="select-house" name="select-house" class="form__select">
 						<option value="#" selected="selected">Квартиры</option>
 						<option value="#">Дома</option>
@@ -125,16 +140,16 @@
 					</select>
 				</div>
 
-				<div class="form__item form__house">
-					<label for="select-price" class="form__label form__label_house">Цена</label>
+				<div class="form__house">
+					<label for="select-price" class="form__label">Цена</label>
 					<select id="select-price" name="select-price" class="form__select">
 						<option value="#" selected="selected">0 - 2 млн. ₽</option>
 						<option value="#">2 - 5 млн. ₽</option>
 					</select>
 				</div>
 
-				<div class="form__item form__house">
-					<label for="select-place" class="form__label form__label_house">Площадь</label>
+				<div class="form__house">
+					<label for="select-place" class="form__label">Площадь</label>
 					<select id="select-place" name="select-place" class="form__select">
 						<option value="#" selected="selected">22 м2 - 460 м2</option>
 						<option value="#">100 м2 - 250 м2</option>
@@ -203,7 +218,7 @@
 	</section>
 
 	<section class="team">
-		<div class="team__container container">
+		<div class="container">
 			<div class="team__content">
 				<h2 class="h2 team__title">НАША КОМАНДА</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis est consequat leo leo venenatis mauris enim enim.</p>
@@ -213,7 +228,7 @@
 	</section>
 
 	<section class="gallery">
-		<div class="gallery__container container">
+		<div class="container">
 			<div class="gallery__content">
 				<div class="gallery__logo">
 					<img src="img/gallery-logo.png" alt="">
@@ -253,7 +268,7 @@
 	</section>
 
 	<footer class="footer">
-		<div class="footer__container container">
+		<div class="container">
 			<div class="footer__block">
 				<div class="footer__item">
 					<div class="footer__logo">
