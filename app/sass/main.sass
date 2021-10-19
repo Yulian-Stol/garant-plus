@@ -570,6 +570,11 @@
 				width: 25px
 				height: 25px
 
+		svg,path
+			fill: #fff
+			&:hover
+				fill: $accent
+
 	&__next
 		left: 250px
 
@@ -787,7 +792,7 @@
 			+r(576)
 				margin-bottom: 15px
 
-			li
+			a
 				font-family: $f_title
 				font-size: 18px
 				color: #fff
@@ -795,6 +800,16 @@
 				display: flex
 				gap: 10px
 				align-items: center
+
+				svg, path
+					fill: #fff
+					+transition
+
+				&:hover
+					color: $accent
+					svg, path
+						fill: $accent
+						+transition
 
 				+r(576)
 					margin-bottom: 0
