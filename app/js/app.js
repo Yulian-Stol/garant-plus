@@ -2,6 +2,79 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+
+		// var slider = document.getElementById('slider');
+
+		// 	noUiSlider.create(slider, {
+		// 			start: [20, 80],
+		// 			connect: true,
+		// 			range: {
+		// 					'min': 0,
+		// 					'max': 100
+		// 			}
+		// 	});
+
+		var snapSlider = document.getElementById('slider-snap');
+
+		noUiSlider.create(snapSlider, {
+				start: [50, 150],
+				snap: true,
+				connect: true,
+				range: {
+						'min': 0,
+						'10%': 50,
+						'20%': 100,
+						'30%': 150,
+						'40%': 500,
+						'50%': 800,
+						'60%': 1000,
+						'70%': 1500,
+						'80%': 1700,
+						'90%': 1900,
+						'max': 2000
+				}
+		});
+
+		var snapValues = [
+			document.getElementById('slider-snap-value-lower'),
+			document.getElementById('slider-snap-value-upper')
+		];
+	
+		snapSlider.noUiSlider.on('update', function (values, handle) {
+				snapValues[handle].innerHTML = values[handle];
+		});
+
+
+		var snapSliderr = document.getElementById('slider-snapp');
+
+		noUiSlider.create(snapSliderr, {
+				start: [50, 150],
+				snap: true,
+				connect: true,
+				range: {
+						'min': 0,
+						'10%': 50,
+						'20%': 100,
+						'30%': 150,
+						'40%': 500,
+						'50%': 800,
+						'60%': 1000,
+						'70%': 1500,
+						'80%': 1700,
+						'90%': 1900,
+						'max': 2000
+				}
+		});
+
+		var snapValuesr = [
+			document.getElementById('slider-snap-value-lowerr'),
+			document.getElementById('slider-snap-value-upperr')
+		];
+	
+		snapSliderr.noUiSlider.on('update', function (values, handle) {
+				snapValuesr[handle].innerHTML = values[handle];
+		});
+
 	//----------------------SLIDER-hero----------------------
 		var mySwiper = new Swiper('.hero__slider', {
 			slidesPerView: 1,
@@ -99,7 +172,23 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 		};
 		hamburger('.hamburger', '.header__nav', '.header');
-		
+
+
+		// //-------------------INSTAGRAM-------------------
+		// new InstagramFeed({
+		// 	'username': 'garantplus48',
+		// 	'container': document.querySelector(".gallery__grid"),
+		// 	'display_profile': false,
+		// 	'display_biography': false,
+		// 	'display_gallery': true,
+		// 	'display_captions': false,
+		// 	'callback': null,
+		// 	'styling': true,
+		// 	'items': 12,
+		// 	'items_per_row': 6,
+		// 	'margin': 0.25
+		// });
+
 	//----------------------MODAL-----------------------
 		const modals = (modalSelector) => {
 			const	modal = document.querySelectorAll(modalSelector);

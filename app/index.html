@@ -10,6 +10,7 @@
 	<link rel="icon" href="img/favicon.ico">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
 	<script src="js/app.min.js" defer></script>
+	<link rel="stylesheet" href="css/main.css?v=1">
 
 </head>
 
@@ -82,7 +83,7 @@
 		<div class="hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div class="banner__info">
+					<div class="banner__info banner__info_one">
 						<div class="banner__text">
 							<h4>3-к квартира</h4>
 							<p>43 м² - 3 000 000₽</p>
@@ -91,8 +92,31 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="swiper-slide">
-					<div class="banner__info">
+					<div class="banner__info banner__info_two">
+						<div class="banner__text">
+							<h4>3-к квартира</h4>
+							<p>43 м² - 3 000 000₽</p>
+							<p>Липецк, Логовая 6</p>
+							<button class="btn btn--banner">Подробнее</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<div class="banner__info banner__info_three">
+						<div class="banner__text">
+							<h4>3-к квартира</h4>
+							<p>43 м² - 3 000 000₽</p>
+							<p>Липецк, Логовая 6</p>
+							<button class="btn btn--banner">Подробнее</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="swiper-slide">
+					<div class="banner__info banner__info_four">
 						<div class="banner__text">
 							<h4>3-к квартира</h4>
 							<p>43 м² - 3 000 000₽</p>
@@ -118,47 +142,76 @@
 		</div>
 	</section>
 
-	<section class="house">
+	<section class="search">
 		<div class="container">
-			<div class="house__select">
-				<div class="form__house">
-					<label for="select-buy" class="form__label">Тип чего-то</label>
-					<select id="select-buy" name="select-buy" class="form__select">
-						<option value="#" selected="selected">Продажа</option>
-						<option value="#">Аренда</option>
-					</select>
+			<div class="search__grid">
+				<div class="search__house search__house_one">
+					<h6>Тип чего-то</h6>
+					<h5>Продажа</h5>
+					<img src="img/arrow-down.png" alt="">
+					<div class="search__select search__select_one">
+						<p>Продажа</p>
+						<p>Аренда</p>
+					</div>
 				</div>
 
-				<div class="form__house">
-					<label for="select-house" class="form__label">Тип недвижимости</label>
-					<select id="select-house" name="select-house" class="form__select">
-						<option value="#" selected="selected">Квартиры</option>
-						<option value="#">Дома</option>
-						<option value="#">Бизнес Недвижимость</option>
-						<option value="#">Участки</option>
-						<option value="#">Гаражи/Машиноместа</option>
-					</select>
+
+				<div class="search__house search__house_two">
+					<h6>Тип недвижимости</h6>
+					<h5>Квартиры</h5>
+					<img src="img/arrow-down.png" alt="">
+					<div class="search__select search__select_two">
+						<p>Квартиры</p>
+						<p>Дома</p>
+						<p>Бизнес Недвижимость</p>
+						<p>Участки</p>
+						<p>Гаражи/Машиноместа</p>
+					</div>
 				</div>
 
-				<div class="form__house">
-					<label for="select-price" class="form__label">Цена</label>
-					<select id="select-price" name="select-price" class="form__select">
-						<option value="#" selected="selected">0 - 2 млн. ₽</option>
-						<option value="#">2 - 5 млн. ₽</option>
-					</select>
+				<div class="search__house search__house_three">
+					<h6>Цена</h6>
+					<h5>0 - 2 млн. ₽</h5>
+					<img src="img/arrow-down.png" alt="">
+					<div class="search__select search__select_three">
+						<div id="slider-snap"></div>
+						<div class="search__value">
+							<div class="search__value_lower">
+								<div id="slider-snap-value-lower"></div>
+							</div>
+							<hr class="search__hr">
+							<div class="search__value_upper">
+								<div id="slider-snap-value-upper"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 
-				<div class="form__house">
-					<label for="select-place" class="form__label">Площадь</label>
-					<select id="select-place" name="select-place" class="form__select">
-						<option value="#" selected="selected">22 м2 - 460 м2</option>
-						<option value="#">100 м2 - 250 м2</option>
-					</select>
+				<div class="search__house search__house_four">
+					<h6>Площадь</h6>
+					<h5>22 м2 - 460 м2</h5>
+					<img src="img/arrow-down.png" alt="">
+					<div class="search__select search__select_four">
+						<div id="slider-snapp"></div>
+						<div class="search__value">
+							<div class="search__value_lower">
+								<div id="slider-snap-value-lowerr"></div>
+							</div>
+							<hr class="search__hr">
+							<div class="search__value_upper">
+								<div id="slider-snap-value-upperr"></div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<button class="btn btn--search">Найти</button>
 			</div>
+		</div>
+	</section>
 
+	<section class="house">
+		<div class="container">
 			<div class="house__grid">
 				<p class="house__box house__box--one" style="background-image: url(img/house-img1.jpg);">Квартиры от 100 метров с ремонтом</p>
 				<p class="house__box house__box--two" style="background-image: url(img/house-img2.jpg);">Участки ИЖС у реки</p>
