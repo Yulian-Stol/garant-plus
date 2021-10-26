@@ -54,6 +54,7 @@
 		border: 1px solid #E6E6E6
 		box-sizing: border-box
 		backdrop-filter: blur(4px)
+		margin-bottom: 20px
 
 		+r(767)
 			height: 40px
@@ -83,12 +84,6 @@
 			border-radius: 0px 0px 10px 10px
 
 		+r(767)
-			grid-column-start: 1
-			grid-column-end: 3
-			grid-row-start: 3
-			grid-row-end: 3
-
-		+r(576)
 			grid-column-start: 1
 			grid-column-end: 2
 			grid-row-start: 5
@@ -467,6 +462,14 @@
 			width: 100%
 			font-size: 16px
 
+		input[type="search"]::-webkit-search-cancel-button
+			-webkit-appearance: none
+			cursor: pointer
+			width: 13px
+			height: 13px
+			background: url(../img/close.png)
+			+cover
+
 	&__tell
 		font-size: 16px
 		font-weight: 700
@@ -500,32 +503,37 @@
 			fill: #fff
 			+transition
 
-	&--active
-		background: #1F1F1F
-		box-shadow: 1px 1px 1px #1F1F1F
+	&--another
+		background: #1f1f1f
+
+.headerpage--active
+	background: #1F1F1F
+	box-shadow: 1px 1px 1px #1F1F1F
+	+transition
+
+	.header__tell
+		background: transparent
 		+transition
 
-		.header__tell
-			background: transparent
-			+transition
-
 .banner
+	width: 100vw
 
 	&__info
 		width: 100%
-		height: 900px
-
-		+r(1500)
-			height: 768px
+		padding-top: 360px
+		padding-bottom: 140px
+		+cover
 
 		+r(1200)
-			height: 600px
+			padding-top: 300px
+			padding-bottom: 100px
 
 		+r(992)
-			height: 500px
+			padding-top: 200px
+			padding-bottom: 80px
 
 		+r(767)
-			height: 460px
+			padding-top: 180px
 
 		h4
 			font-size: 40px
@@ -546,40 +554,6 @@
 
 			+r(576)
 				font-size: 28px
-
-		&_one
-			background: url(../img/swiper-slide1.jpg)
-			+cover
-
-		&_two
-			background: url(../img/swiper-slide2.jpg)
-			+cover
-
-		&_three
-			background: url(../img/swiper-slide3.jpg)
-			+cover
-
-		&_four
-			background: url(../img/swiper-slide4.jpg)
-			+cover
-
-	&__text
-		position: absolute
-		bottom: 195px
-		left: 105px
-
-		+r(1200)
-			bottom: 125px
-
-		+r(992)
-			bottom: 150px
-
-		+r(767)
-			left: 60px
-			bottom: 160px
-
-		+r(576)
-			left: 15px
 
 		p
 			font-size: 24px
@@ -609,16 +583,16 @@
 				font-size: 18px
 
 .hero
-
 	&__slider
 		overflow: hidden
 		position: relative
 
+	&__button
+		display: flex
+		align-items: center
+		gap: 30px
+
 	&__pagination
-		position: absolute
-		bottom: 130px
-		left: 176px
-		width: 100%
 		z-index: 1
 		gap: 5px
 		font-size: 20px
@@ -626,37 +600,12 @@
 		font-family: $f_title
 		font-weight: 500
 
-		+r(1200)
-			bottom: 70px
-
-		+r(992)
-			bottom: 95px
-
-		+r(767)
-			left: 130px
-			bottom: 105px
-
 		+r(576)
-			left: 60px
-			bottom: 115px
 			font-size: 18px
 
 	&__next,
 	&__prev
-		width: 40px
-		height: 40px
-		position: absolute
 		z-index: 1
-		bottom: 125px
-
-		+r(1200)
-			bottom: 65px
-
-		+r(992)
-			bottom: 90px
-
-		+r(767)
-			bottom: 100px
 
 		+r(576)
 			svg
@@ -667,24 +616,6 @@
 			fill: #fff
 			&:hover
 				fill: $accent
-
-	&__next
-		left: 250px
-
-		+r(767)
-			left: 205px
-
-		+r(576)
-			left: 115px
-
-	&__prev
-		left: 108px
-
-		+r(767)
-			left: 60px
-
-		+r(576)
-			left: 15px
 
 .house
 	position: relative
@@ -1451,17 +1382,13 @@
 			grid-template-rows: 80px 50px
 
 		+r(767)
-			grid-template-columns: repeat(2, 1fr)
-			grid-template-rows: 80px 80px 50px
+			grid-template-columns: 100%
+			grid-template-rows: max-content max-content max-content max-content
 			position: static
 			box-shadow: none
 			justify-content: center
 			margin-bottom: 50px
 			transform: translate(0, 0)
-
-		+r(576)
-			grid-template-columns: 1fr
-			grid-template-rows: 80px 80px 80px 80px 50px
 
 	&__select
 		display: flex
@@ -1472,16 +1399,7 @@
 
 		+r(767)
 			gap: 10px
-
-		+r(480)
-			gap: 10px
-
-		+r(400)
-			gap: 6px
-
-		+r(345)
-			padding-top: 5px
-			padding-bottom: 5px
+			padding: 0
 
 		p
 			cursor: pointer
@@ -1509,12 +1427,12 @@
 			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
 
 			+r(767)
-				width: 544px
-				top: 80px
-				z-index: 1
-
-			+r(576)
 				width: 100%
+				z-index: 1
+				border-bottom: none
+				position: static
+				opacity: 1
+				visibility: inherit
 
 		&_two
 			+transition
@@ -1530,15 +1448,13 @@
 			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
 
 			+r(767)
-				width: 544px
-				top: 80px
-				left: -273px
-				z-index: 1
-
-			+r(576)
 				width: 100%
 				left: 0
-				top: -80px
+				z-index: 1
+				border-bottom: none
+				position: static
+				opacity: 1
+				visibility: inherit
 
 		&_three
 			+transition
@@ -1553,13 +1469,13 @@
 			visibility: hidden
 			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
 
-
 			+r(767)
-				width: 544px
-				left: 0
-
-			+r(576)
 				width: 100%
+				left: 0
+				border-bottom: none
+				position: static
+				opacity: 1
+				visibility: inherit
 
 		&_four
 			+transition
@@ -1575,12 +1491,12 @@
 			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
 
 			+r(767)
-				width: 544px
-				left: -273px
-
-			+r(576)
 				width: 100%
 				left: 0
+				border-bottom: none
+				position: static
+				opacity: 1
+				visibility: inherit
 
 	&__house
 		border-right: 1px solid rgba(230, 230, 230, 0.5)
@@ -1602,6 +1518,9 @@
 				right: 10px
 				bottom: 20px
 
+				+r(767)
+					position: static
+
 		h6
 			font-size: 14px
 			color: #B2B2B2
@@ -1620,6 +1539,10 @@
 				img
 					+rotate(180)
 
+				+r(767)
+					img
+						+rotate(0)
+
 		&_two
 			position: relative
 			&:hover
@@ -1628,6 +1551,10 @@
 					visibility: inherit
 				img
 					+rotate(180)
+
+				+r(767)
+					img
+						+rotate(0)
 
 		&_three
 			position: relative
@@ -1638,6 +1565,10 @@
 				img
 					+rotate(180)
 
+				+r(767)
+					img
+						+rotate(0)
+
 		&_four
 			position: relative
 			&:hover
@@ -1647,3 +1578,90 @@
 				img
 					+rotate(180)
 
+				+r(767)
+					img
+						+rotate(0)
+
+	&__value
+		display: flex
+		width: 45%
+		justify-content: space-between
+		align-items: center
+
+		&_lower, &_upper
+			width: 130px
+			height: 30px
+			border: 1px solid #E6E6E6
+			border-radius: 5px
+			display: flex
+			justify-content: center
+			align-items: center
+			font-size: 16px
+			color: #000
+
+			+r(400)
+				width: 105px
+
+		&_input
+			border: none
+			width: 110px
+
+			+r(400)
+				width: 90px
+
+		&_inputt
+			border: none
+			width: 100px
+
+			+r(400)
+				width: 80px
+
+	&__hr
+		flex-shrink: 0
+		width: 12px
+		border: 1px solid #000
+
+.accordion
+
+	&:last-child
+		margin-bottom: 0
+
+	&__header
+		+transition
+		display: flex
+		align-items: center
+		justify-content: space-between
+		cursor: pointer
+		font-weight: 700
+
+		img
+			+rotate(0)
+
+	&__content
+		+transition
+		overflow: hidden
+		color: #b5acac
+		height: 80px
+
+		+r(767)
+			height: 0
+			border-radius: 0px
+
+	&--active
+
+		.accordion
+			&__header
+				margin-bottom: 15px
+
+				img
+					+rotate(180)
+
+			&__content
+				opacity: 1
+				padding: 0 5px
+
+		.search__select_three
+			height: 60px !important
+
+		.search__select_four
+			height: 60px !important

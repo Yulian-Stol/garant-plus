@@ -140,30 +140,6 @@
 	 cursor: default;
  }
 
- .search__value {
-	 display: flex;
-	 width: 45%;
-	 justify-content: space-between;
-	 align-items: center;
-	 gap: 50px;
- }
- .search__value_lower, .search__value_upper {
-	 width: 130px;
-	 height: 30px;
-	 border: 1px solid #E6E6E6;
-	 border-radius: 5px;
-	 display: flex;
-	 justify-content: center;
-	 align-items: center;
-	 font-size: 16px;
-	 color: #D2D2D2;
- }
-
- .search__hr {
-	 flex-shrink: 0;
-	 width: 12px;
-	 border: 1px solid #000;
- }
  	
  /* Handle stripes;
 	*/
