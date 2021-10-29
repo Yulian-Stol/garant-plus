@@ -222,39 +222,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			accordions('.accordionr');
 		};
 
-	//----------------accordion-filter----------------
-		if (document.documentElement.clientWidth < 993) {
-			const accordions = (accordionSelector) => {
-				const	accordion = document.querySelectorAll(accordionSelector);
-			
-				accordion.forEach(item => {
-					const accordionClick = item.querySelector('.filter__header'),
-								accordionContent = item.querySelector('.filter__content');
-			
-					accordionClick.addEventListener('click', (e) => {
-						if(!item.classList.contains('filter--active')) {
-			
-							item.classList.add('filter--active')
-							accordionContent.style.height = "auto"
-							var height = accordionContent.clientHeight + "px"
-							accordionContent.style.height = "0px"
-			
-							setTimeout(() => {
-								accordionContent.style.height = height
-							}, 0)
-			
-							} else {
-								accordionContent.style.height = "0px"
-									item.classList.remove('filter--active')
-						}
-			
-					});
-				});
-			
-			};
-			accordions('.filter');
-		};
-
 	//----------------------MODAL-----------------------
 		const modals = (modalSelector) => {
 			const	modal = document.querySelectorAll(modalSelector);
