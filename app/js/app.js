@@ -119,6 +119,41 @@ document.addEventListener("DOMContentLoaded", function() {
 		},
 	});
 
+	//---------------slider--plan----------
+	var mySwiper = new Swiper('.plan__slider', {
+		slidesPerView: 1,
+		spaceBetween: 30,
+		loop: true,
+		pagination: {
+			el: '.plan__pagination',
+			clickable: 'true',
+		},
+		navigation: {
+			nextEl: '.plan__next',
+			prevEl: '.plan__prev',
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+		}
+	});
+
+	//-----------------swipers--plan---------------
+	var mySwiper = new Swiper('.planhouse__slider', {
+		slidesPerView: 1,
+		loop: true,
+		pagination: {
+			el: '.planhouse__pagination',
+			clickable: 'true',
+		},
+		navigation: {
+			nextEl: '.planhouse__next',
+			prevEl: '.planhouse__prev',
+		},
+	});
+
 	//----------------------FIXED-HEADER-----------------------
 		const headerFixed = (headerFixed, headerActive) => {
 			const header =  document.querySelector(headerFixed),
@@ -191,35 +226,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//------------------------accordion--2----------------
 		if (document.documentElement.clientWidth < 993) {
-			const accordions = (accordionSelector) => {
-				const	accordion = document.querySelectorAll(accordionSelector);
-			
-				accordion.forEach(item => {
-					const accordionClick = item.querySelector('.accordionr__header'),
-								accordionContent = item.querySelector('.accordionr__content');
-			
-					accordionClick.addEventListener('click', (e) => {
-						if(!item.classList.contains('accordionr--active')) {
-			
-							item.classList.add('accordionr--active')
-							accordionContent.style.height = "auto"
-							var height = accordionContent.clientHeight + "px"
-							accordionContent.style.height = "0px"
-			
-							setTimeout(() => {
-								accordionContent.style.height = height
-							}, 0)
-			
+			const accordionsr = (accordionSelector) => {
+				const	accordionr = document.querySelectorAll(accordionSelector);
+
+				if(accordionr) {
+					accordionr.forEach(item => {
+						const accordionClickr = item.querySelector('.accordionr__header'),
+									accordionContentr = item.querySelector('.accordionr__content');
+				
+						accordionClickr.addEventListener('click', (e) => {
+							if(!item.classList.contains('accordionr--active')) {
+
+								item.classList.add('accordionr--active');
+								accordionContentr.style.height = "auto";
+								var height = accordionContentr.clientHeight + "px";
+								accordionContentr.style.height = "0px";
+				
+								setTimeout(() => {
+									accordionContentr.style.height = height;
+								}, 0);
+				
 							} else {
-								accordionContent.style.height = "0px"
-									item.classList.remove('accordionr--active')
-						}
-			
+								accordionContentr.style.height = "0px";
+								item.classList.remove('accordionr--active');
+							}
+							
+						});
 					});
-				});
-			
+				}
 			};
-			accordions('.accordionr');
+			accordionsr('.accordionr');
 		};
 
 	//----------------------MODAL-----------------------
