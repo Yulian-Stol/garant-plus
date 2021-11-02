@@ -1472,7 +1472,7 @@
 	&--width
 		border: 1px solid #e6e6e6
 		max-width: 1290px
-		width: 100%
+		width: 99%
 
 .form
 	&__item
@@ -2530,6 +2530,11 @@
 
 	&__item
 		border: 1px solid #E6E6E6
+		+transition
+
+		&:hover
+			transform: scale(1.02)
+			box-shadow: 0px 0px 15px #6b6b6b
 
 	&__city
 		color: #E16F0B
@@ -2543,6 +2548,7 @@
 			margin-bottom: 10px
 
 	&__img
+		display: block
 
 		img
 			width: 100%
@@ -2773,8 +2779,11 @@
 //----buy------
 
 .houselist
-	padding: 25px 0
+	padding: 25px 0 90px 0
 	position: relative
+
+	+r(1200)
+		padding: 25px 0 50px 0
 
 	+r(576)
 		padding: 15px 0
@@ -2803,6 +2812,13 @@
 
 			img
 				margin-bottom: 3px
+
+			label
+				margin-bottom: 0
+
+			select
+				border: none
+				-webkit-appearance: none
 
 	&__grid
 		display: grid
@@ -3838,7 +3854,7 @@
 		position: absolute
 		transform: translate(-50%, -50%)
 		left: 50%
-		top: 10px
+		top: 0
 		display: flex
 		justify-content: center
 		max-width: 170px
