@@ -2,9 +2,37 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	//-----slider------
+	var a;
+		function show_hide()
+		{
+			if(a==1)
+				{
+					document.getElementById("search").style.display="none";
+					return a=0;
+				}
+			else
+				{
+					document.getElementById("search").style.display="block";
+					return a=1;
+				}
+		}
 
-	
+	var b;
+		function hidee()
+		{
+			if(b==1)
+				{
+					document.getElementById("filterr").style.display="none";
+					return b=0;
+				}
+			else
+				{
+					document.getElementById("filterr").style.display="block";
+					return b=1;
+				}
+		}
+
+	//-----slider------
 		var html5Slider = document.getElementById('html5');
 		if(html5Slider) {
 			noUiSlider.create(html5Slider, {
@@ -17,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						'max': [5000000]
 				}
 			});
-	
+
 			var inputNumber = document.getElementById('input-number');
 			var inputNumberr = document.getElementById('input-numberr');
 			html5Slider.noUiSlider.on('update', function (values, handle) {
@@ -175,27 +203,63 @@ document.addEventListener("DOMContentLoaded", function() {
 		headerFixed('.headerpage', '.headerpage--active');
 		headerFixed('.headerpage_mobile', '.headerpage_mobile--active');
 	
-	//----------------------HAMBURGER-----------------------
-		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
-			const button = document.querySelector(hamburgerButton),
+	//----------------------hamburger-----------------------
+	//--------------DISPLAY--BLOCK-NONE-------------------
+		const hamburger = (hamburgerButton, hamburgerButtonActive, hamburgerNav, hamburgerNavActive, hamburgerHeader, headerMenuActive) => {
+			const button = document.querySelectorAll(hamburgerButton),
 						nav = document.querySelector(hamburgerNav),
 						header = document.querySelector(hamburgerHeader);
-	
-			button.addEventListener('click', (e) => {
-				button.classList.toggle('hamburger--active');
-				nav.classList.toggle('header__nav--active');
-				header.classList.toggle('header--menu');
-			});
-	
+			
+			if(button) {
+				if(nav) {
+
+					button.forEach(element => {
+						element.addEventListener('click', (e) => {
+							element.classList.toggle(hamburgerButtonActive);
+							nav.classList.toggle(hamburgerNavActive);
+							header.classList.toggle(headerMenuActive);
+						});
+					});
+
+				}
+			}
+
 		};
-		hamburger('.hamburger', '.header__nav', '.header');
+		hamburger('.hamburger', 'hamburger--active', '.header__nav', 'header__nav--active', '.header', 'header--menu');
+		hamburger('.btnSearch', 'btnSerach--active', '.header__search_wrap', 'header__search_wrap--active', '.header', 'a');
+		hamburger('.filter__title', 'filter__title--active', '.filter__content', 'filter__content--active', '.header', 'a');
+
+//--------------------MAP--SEARCH--SWITCH----------
+		const map = (mapButton, listButton, houseListMap, btnFilterActive, houseListMapActive) => {
+			const mapButtonActive = document.querySelector(mapButton),
+						listButtonActive = document.querySelector(listButton),
+						wrap = document.querySelector(houseListMap);
+			
+			if(mapButtonActive) {
+				mapButtonActive.addEventListener('click', (e) => {
+					mapButtonActive.classList.add(btnFilterActive);
+					wrap.classList.add(houseListMapActive);
+					listButtonActive.classList.remove(btnFilterActive);
+				});
+			}
+
+			if(listButtonActive) {
+				listButtonActive.addEventListener('click', (e) => {
+					mapButtonActive.classList.remove(btnFilterActive);
+					wrap.classList.remove(houseListMapActive);
+					listButtonActive.classList.add(btnFilterActive);
+				});
+			}
+
+		};
+		map('.btn--map', '.btn--list' , '.houselist__map', 'btn--filter--active', 'houselist__map--active');
 
 
 	//-------------ACCORDION---------------
-		if (document.documentElement.clientWidth < 768) {
-			const accordions = (accordionSelector) => {
-				const	accordion = document.querySelectorAll(accordionSelector);
-			
+		const accordions = (accordionSelector) => {
+			const	accordion = document.querySelectorAll(accordionSelector);
+
+			if (document.documentElement.clientWidth < 768) {
 				accordion.forEach(item => {
 					const accordionClick = item.querySelector('.accordion__header'),
 								accordionContent = item.querySelector('.accordion__content');
@@ -216,19 +280,16 @@ document.addEventListener("DOMContentLoaded", function() {
 								accordionContent.style.height = "0px"
 									item.classList.remove('accordion--active')
 						}
-			
 					});
 				});
-			
 			};
-			accordions('.accordion');
 		};
+		accordions('.accordion');
 
 	//------------------------accordion--2----------------
-		if (document.documentElement.clientWidth < 993) {
-			const accordionsr = (accordionSelector) => {
-				const	accordionr = document.querySelectorAll(accordionSelector);
-
+		const accordionsr = (accordionSelector) => {
+			const	accordionr = document.querySelectorAll(accordionSelector);
+			if (document.documentElement.clientWidth < 993) {
 				if(accordionr) {
 					accordionr.forEach(item => {
 						const accordionClickr = item.querySelector('.accordionr__header'),
@@ -255,8 +316,9 @@ document.addEventListener("DOMContentLoaded", function() {
 					});
 				}
 			};
-			accordionsr('.accordionr');
 		};
+		accordionsr('.accordionr');
+
 
 	//----------------------MODAL-----------------------
 		const modals = (modalSelector) => {
@@ -464,4 +526,3 @@ document.addEventListener("DOMContentLoaded", function() {
 		forms('.form');
 
 });
-	

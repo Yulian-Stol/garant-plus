@@ -118,7 +118,7 @@
 		border: none
 		box-sizing: border-box
 		backdrop-filter: blur(4px)
-		background: linear-gradient(0deg, rgba(31, 31, 31, 0.7), rgba(31, 31, 31, 0.7))
+		background: rgba(31, 31, 31, 0.5)
 		gap: 10px
 		padding: 5px
 
@@ -127,6 +127,9 @@
 			font-size: 12px
 			height: 30px
 			gap: 5px
+
+		&:hover
+			border: none
 
 	&--look
 		max-width: 240px
@@ -239,12 +242,9 @@
 		border: none
 		padding: 0
 
-		&:hover
+		&--active
 			svg, path
-				fill: #E16F0B
-
-		svg, path
-			fill: #B2B2B2
+				fill: $accent
 
 	&--submit
 		width: 100%
@@ -254,6 +254,17 @@
 		border-radius: 0px
 		border: none
 		margin-bottom: 20px
+
+	&--clsearch
+		border: none
+		background: transparent
+
+		svg, path
+			+transition
+
+		&:hover
+			svg, path
+				fill: $accent
 
 .h1
 	font-family: $f_title
@@ -522,17 +533,14 @@
 
 	&__search
 		position: relative
-		display: block
+		// display: block
 
-		&:hover
-			.header__search_wrap
-				opacity: 1
-				visibility: inherit
+		&_close
+			cursor: pointer
 
 		&_wrap
 			position: absolute
-			opacity: 0
-			visibility: hidden
+			display: none
 			width: 740px
 			height: 40px
 			background: #fff
@@ -555,6 +563,9 @@
 
 			+r(500)
 				width: 230px
+
+			&--active
+				display: block !important
 
 		form
 			height: 100%
@@ -738,10 +749,6 @@
 						&::after
 							background-color: rgba(178, 178, 178, 0.7)
 
-			.header__search
-				svg, path
-					fill: #fff
-
 			.header__tell
 				svg, path
 					fill: #fff
@@ -902,7 +909,6 @@
 			grid-auto-rows: 75px
 
 	&__box
-		+cover
 		font-size: 28px
 		color: #fff
 		display: flex
@@ -910,6 +916,9 @@
 		justify-content: center
 		text-align: center
 		padding: 45px
+		background-blend-mode: multiply
+		+transition
+		+cover
 
 		+r(1200)
 			font-size: 25px
@@ -924,6 +933,11 @@
 
 		+r(576)
 			font-size: 20px
+
+		&:hover
+			width: 100%
+			height: 100%
+			background-color: rgba(0, 0, 0, 0.4)
 
 		&--one
 			grid-column-start: 1
@@ -2595,21 +2609,37 @@
 			padding: 0
 
 	&__slide
-		padding: 550px 0 100px 80px
+		height: 820px
 		width: 100vw
 		+cover
 
 		+r(1200)
-			padding: 400px 0 60px 50px
+			height: 620px
 
 		+r(992)
-			padding: 250px 0 30px 30px
+			height: 480px
 
 		+r(767)
-			padding-top: 160px
+			height: 380px
 
 		+r(576)
-			padding: 130px 0 20px 15px
+			height: 310px
+
+	&__txt
+		display: flex
+		flex-direction: column
+		position: absolute
+		bottom: 100px
+		left: 100px
+		z-index: 1
+
+		+r(992)
+			bottom: 50px
+			left: 60px
+
+		+r(576)
+			bottom: 20px
+			left: 20px
 
 		p
 			&:nth-child(3n)
@@ -2844,8 +2874,13 @@
 			display: block
 			position: absolute
 			height: 100%
+			width: 100%
 			top: 0
 			left: 0
+
+			iframe
+				width: 100%
+				height: 100%
 
 		iframe
 			width: 100%
@@ -2951,8 +2986,7 @@
 		justify-content: space-around
 		position: absolute
 		border-radius: 0 0 10px 10px
-		opacity: 0
-		visibility: hidden
+		display: none
 		background: #fff
 		border-top: 1px solid rgba(230, 230, 230, 0.5)
 		z-index: 100
@@ -2960,7 +2994,6 @@
 		height: 80px
 		left: 0
 		top: 80px
-		+transition
 
 		+r(1200)
 			top: 170px
@@ -3003,8 +3036,7 @@
 
 		&:hover
 			.housearch__select
-				opacity: 1
-				visibility: inherit
+				display: flex
 			img
 				+rotate(180)
 
@@ -3097,14 +3129,14 @@
 			+rotate(0)
 
 	&__content
-		+transition
-		overflow: hidden
 		color: #b5acac
 		height: 80px
 
 		+r(992)
 			height: 0
 			border-radius: 0px
+			opacity: 0
+			+transition
 
 			p
 				margin-bottom: 3px
@@ -3123,10 +3155,6 @@
 				padding: 5px
 
 .filter
-	+r(992)
-		&:hover
-			.filter__content
-				display: block
 
 	&__header
 		display: none
@@ -3139,6 +3167,8 @@
 			font-weight: 700
 
 	&__title
+		border: none
+		background: transparent
 		+r(992)
 			display: flex
 			align-items: center
@@ -3150,6 +3180,9 @@
 		+r(992)
 			display: none
 			padding-top: 20px
+
+		&--active
+			display: block
 
 	&__btn
 		+r(992)
@@ -3240,7 +3273,7 @@
 			opacity: 1
 
 	&__close
-		position: absolute
+		position: fixed
 		right: 50px
 		top: 30px
 		display: block
