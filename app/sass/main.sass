@@ -1627,10 +1627,22 @@
 		flex-wrap: wrap
 		padding: 20px
 		gap: 30px
+		position: absolute
+		width: 728px
+		height: 80px
+		border-radius: 10px 10px 0 0
+		background: #fff
+		display: none
+		border-bottom: 1px solid rgba(230, 230, 230, 0.5)
 
 		+r(767)
 			gap: 10px
 			padding: 0
+			width: 100%
+			z-index: 1
+			border-bottom: none
+			position: static
+			display: flex
 
 		p
 			cursor: pointer
@@ -1645,89 +1657,20 @@
 				font-size: 14px
 
 		&_one
-			+transition
-			position: absolute
-			width: 728px
-			height: 80px
-			border-radius: 10px 10px 0 0
-			background: #fff
 			top: -80px
 			left: 0
-			opacity: 0
-			visibility: hidden
-			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
-
-			+r(767)
-				width: 100%
-				z-index: 1
-				border-bottom: none
-				position: static
-				opacity: 1
-				visibility: inherit
 
 		&_two
-			+transition
-			position: absolute
-			width: 728px
-			height: 80px
-			border-radius: 10px 10px 0 0
-			background: #fff
 			top: -80px
 			left: -182px
-			opacity: 0
-			visibility: hidden
-			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
-
-			+r(767)
-				width: 100%
-				left: 0
-				z-index: 1
-				border-bottom: none
-				position: static
-				opacity: 1
-				visibility: inherit
 
 		&_three
-			+transition
-			position: absolute
-			width: 728px
-			height: 80px
-			border-radius: 10px 10px 0 0
-			background: #fff
 			top: -80px
 			left: -364px
-			opacity: 0
-			visibility: hidden
-			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
-
-			+r(767)
-				width: 100%
-				left: 0
-				border-bottom: none
-				position: static
-				opacity: 1
-				visibility: inherit
 
 		&_four
-			+transition
-			position: absolute
-			width: 728px
-			height: 80px
-			border-radius: 10px 10px 0 0
-			background: #fff
 			top: -80px
 			left: -546px
-			opacity: 0
-			visibility: hidden
-			border-bottom: 1px solid rgba(230, 230, 230, 0.5)
-
-			+r(767)
-				width: 100%
-				left: 0
-				border-bottom: none
-				position: static
-				opacity: 1
-				visibility: inherit
 
 	&__house
 		border-right: 1px solid rgba(230, 230, 230, 0.5)
@@ -1737,6 +1680,16 @@
 		background: #fff
 		padding: 20px
 		box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05)
+		position: relative
+		&:hover
+			.search__select
+				display: flex
+			img
+				+rotate(180)
+
+			+r(767)
+				img
+					+rotate(0)
 
 		+r(767)
 			border: 1px solid rgba(230, 230, 230, 0.5)
@@ -1760,58 +1713,6 @@
 		h5
 			font-size: 20px
 			color: #1F1F1F
-
-		&_one
-			position: relative
-			&:hover
-				.search__select_one
-					opacity: 1
-					visibility: inherit
-				img
-					+rotate(180)
-
-				+r(767)
-					img
-						+rotate(0)
-
-		&_two
-			position: relative
-			&:hover
-				.search__select_two
-					opacity: 1
-					visibility: inherit
-				img
-					+rotate(180)
-
-				+r(767)
-					img
-						+rotate(0)
-
-		&_three
-			position: relative
-			&:hover
-				.search__select_three
-					opacity: 1
-					visibility: inherit
-				img
-					+rotate(180)
-
-				+r(767)
-					img
-						+rotate(0)
-
-		&_four
-			position: relative
-			&:hover
-				.search__select_four
-					opacity: 1
-					visibility: inherit
-				img
-					+rotate(180)
-
-				+r(767)
-					img
-						+rotate(0)
 
 	&__value
 		display: flex
@@ -1869,7 +1770,6 @@
 			+rotate(0)
 
 	&__content
-		+transition
 		overflow: hidden
 		color: #b5acac
 		height: 80px
@@ -1877,6 +1777,8 @@
 		+r(767)
 			height: 0
 			border-radius: 0px
+			opacity: 0
+			+transition
 
 	&--active
 
@@ -3009,6 +2911,7 @@
 			position: static
 			opacity: 1
 			visibility: inherit
+			display: flex
 			border: none
 			left: 0
 			transform: translate(0)
@@ -3285,9 +3188,15 @@
 		transition: all .6s
 		background-color: transparent
 
+		+r(992)
+			right: 25px
+			top: 25px
+
 		+r(576)
 			width: 30px
 			height: 30px
+			right: 10px
+			top: 10px
 
 		&:hover
 			outline: none
@@ -3685,6 +3594,7 @@
 
 	&__container
 		display: flex
+		justify-content: space-between
 
 		+r(576)
 			flex-direction: column
@@ -3793,6 +3703,10 @@
 	&__wrap
 		position: relative
 
+	&__slide
+		margin-top: auto
+		margin-bottom: auto
+
 	&__slider
 		overflow: hidden
 
@@ -3820,10 +3734,13 @@
 			background-color: #E16F0B
 
 	&__swipers
-		width: 35%
+		width: 33%
 		display: flex
 		flex-direction: column
-		gap: 20px
+		gap: 50px
+
+		+r(992)
+			gap: 40px
 
 		+r(576)
 			width: 100%
@@ -3887,25 +3804,26 @@
 		position: absolute
 		transform: translate(-50%, -50%)
 		left: 50%
-		top: 0
+		top: -10px
 		display: flex
 		justify-content: center
-		max-width: 170px
+		max-width: fit-content
 		background: #E16F0B
 		color: #fff
 		font-weight: 400
 		font-family: $f_title
 		font-size: 14px
 		text-transform: uppercase
-		padding: 10px 35px
+		padding: 10px 30px
 		z-index: 1
 
 		+r(992)
 			padding: 10px 15px
 			font-size: 12px
+			top: -10px
 
 		+r(767)
-			padding: 5px
+			padding: 3px
 
 		+r(576)
 			padding: 10px 30px
