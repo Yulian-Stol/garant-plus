@@ -1634,6 +1634,7 @@
 		background: #fff
 		display: none
 		border-bottom: 1px solid rgba(230, 230, 230, 0.5)
+		justify-content: space-around
 
 		+r(767)
 			gap: 10px
@@ -1681,15 +1682,6 @@
 		padding: 20px
 		box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05)
 		position: relative
-		&:hover
-			.search__select
-				display: flex
-			img
-				+rotate(180)
-
-			+r(767)
-				img
-					+rotate(0)
 
 		+r(767)
 			border: 1px solid rgba(230, 230, 230, 0.5)
@@ -1766,8 +1758,17 @@
 		cursor: pointer
 		font-weight: 700
 
-		img
-			+rotate(0)
+		span
+			width: 13px
+			height: 13px
+			display: block
+			border-top: 2px solid #D2D2D2
+			border-left: 2px solid #D2D2D2
+			position: absolute
+			top: 38px
+			right: 15px
+			+rotate(-135)
+			+transition
 
 	&__content
 		overflow: hidden
@@ -1783,21 +1784,26 @@
 	&--active
 
 		.accordion
-			&__header
-				margin-bottom: 15px
 
-				img
-					+rotate(180)
+			+r(767)
+				&__header
+					margin-bottom: 15px
+
+			&__header
+				span
+					+rotate(45)
 
 			&__content
 				opacity: 1
-				padding: 0 5px
+				padding: 0 10px
+				display: flex
 
-		.search__select_three
-			height: 60px !important
+		+r(767)
+			.search__select_three
+				height: 60px !important
 
-		.search__select_four
-			height: 60px !important
+			.search__select_four
+				height: 60px !important
 
 //--team-page--
 
@@ -2269,6 +2275,7 @@
 
 		img
 			width: 100%
+			object-fit: cover
 
 	&__pagination
 		position: absolute
@@ -2720,6 +2727,31 @@
 	+r(576)
 		padding: 15px 0
 
+	&--active
+		padding: 0
+
+		.houselist__wrap_text
+			display: none
+
+		.houselist__grid
+			display: flex
+			margin-top: 250px
+			margin-bottom: 0
+
+		.object__item
+			display: none
+
+		.object__item--mobile
+			display: block
+
+		.object__slide
+			img
+				height: 160px
+
+		.houselist__number
+			display: none
+
+
 	&__container
 		display: flex
 		gap: 30px
@@ -2934,27 +2966,15 @@
 		flex-direction: column
 		justify-content: center
 		background: #fff
-		padding: 20px 10px 20px 20px
+		padding: 20px
 		box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.05)
-
-		&:hover
-			.housearch__select
-				display: flex
-			img
-				+rotate(180)
-
-			+r(992)
-				img
-					+rotate(0)
 
 		+r(992)
 			border: 1px solid rgba(230, 230, 230, 0.5)
 			box-shadow: none
 
-		img
+		span
 				+transition
-				width: 20px
-				right: 10px
 
 		h6
 			font-size: 14px
@@ -3022,24 +3042,33 @@
 
 	&__header
 		+transition
-		display: flex
-		align-items: center
-		justify-content: space-between
+		position: relative
 		cursor: pointer
 		font-weight: 700
 
-		img
-			+rotate(0)
+		span
+			width: 12px
+			height: 12px
+			display: block
+			border-top: 2px solid #D2D2D2
+			border-left: 2px solid #D2D2D2
+			position: absolute
+			top: 15px
+			right: -5px
+			+rotate(-135)
 
 	&__content
 		color: #b5acac
 		height: 80px
+		display: none
 
 		+r(992)
 			height: 0
 			border-radius: 0px
 			opacity: 0
+			display: flex
 			+transition
+			overflow: hidden
 
 			p
 				margin-bottom: 3px
@@ -3047,15 +3076,18 @@
 	&--active
 
 		.accordionr
-			&__header
-				margin-bottom: 15px
+			+r(992)
+				&__header
+					margin-bottom: 15px
 
-				img
-					+rotate(180)
+			&__header
+				span
+					+rotate(45)
 
 			&__content
 				opacity: 1
 				padding: 5px
+				display: flex
 
 .filter
 
@@ -3357,7 +3389,8 @@
 			position: absolute
 			color: #fff
 			font-weight: 400
-			width: fit-content
+			width: 100%
+			text-align: center
 
 		&_title
 			font-family: $f_title
@@ -3579,6 +3612,31 @@
 			grid-template-columns: 100%
 			gap: 20px
 
+.contact
+	display: none
+	height: 40px
+	justify-content: space-around
+	align-items: center
+	padding: 0 50px
+	background: #F0B389
+	position: sticky
+	z-index: 1000
+	bottom: 0
+	width: 100%
+
+	+r(767)
+		display: flex
+
+	svg
+		width: 20px
+
+		&:hover
+			path
+				fill: #000
+
+		path
+			fill: #fff
+
 //----plan-----
 
 .plan
@@ -3709,9 +3767,24 @@
 
 	&__slider
 		overflow: hidden
+		height: 400px
+
+		+r(1200)
+			height: 300px
+
+		+r(992)
+			height: 250px
+
+		+r(767)
+			height: 200px
+
+		+r(576)
+			height: 270px
 
 		img
 			width: 100%
+			height: 100%
+			object-fit: cover
 
 	&__pagination
 		position: absolute
@@ -3765,6 +3838,13 @@
 				font-size: 24px
 
 .planhouse
+
+	&__slide
+		&_plan
+
+			img
+				object-fit: contain
+				height: 500px
 
 	&__wrap
 		position: relative
