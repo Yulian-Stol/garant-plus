@@ -3907,3 +3907,371 @@
 
 		+r(576)
 			padding: 10px 30px
+
+//----service----
+
+.service
+	+r(576)
+		padding-top: 30px
+
+	&__banner
+		img
+			width: 100%
+			height: 700px
+			object-fit: cover
+
+			+r(992)
+				height: auto
+				object-fit: contain
+
+	&__txt
+		text-align: center
+		padding-top: 40px
+		padding-bottom: 40px
+
+		+r(992)
+			padding-top: 25px
+			padding-bottom: 25px
+
+	&__subtitle
+		font-size: 30px
+		font-family: $f_title
+		text-transform: uppercase
+		margin-bottom: 40px
+
+		+r(992)
+			font-size: 25px
+			margin-bottom: 20px
+
+		+r(767)
+			font-size: 22px
+
+		br
+			+r(767)
+				display: none
+
+	&__text
+		font-size: 20px
+		margin-bottom: 30px
+
+		+r(992)
+			font-size: 16px
+			margin-bottom: 15px
+
+		br
+			+r(992)
+				display: none
+
+		&--more
+			font-size: 24px
+			margin-bottom: 10px
+
+			+r(992)
+				font-size: 20px
+				margin-bottom: 5px
+
+	&__title
+		margin-bottom: 10px
+
+		+r(992)
+			margin-bottom: 5px
+
+	&__block
+		&_container
+			display: flex
+			justify-content: space-between
+			gap: 15px
+			
+			+r(1200)
+				flex-wrap: wrap
+				justify-content: center
+
+	&__item
+		width: 410px
+		border: 1px solid #E6E6E6
+		padding: 30px 10px 25px 10px
+		text-align: center
+		font-size: 18px
+
+		+r(1320)
+			width: 380px
+
+		+r(992)
+			width: 48%
+
+		+r(767)
+			width: 100%
+
+		&_img
+			margin-bottom: 30px
+
+			img
+				width: 70px
+				height: 70px
+
+	&__container
+		position: relative
+		padding: 0 30px
+
+	&__wrap
+		padding-bottom: 90px
+		padding-top: 70px
+
+		+r(992)
+			padding-top: 40px
+			padding-bottom: 50px
+
+	&__slider
+		overflow: hidden
+		height: 390px
+
+		+r(1200)
+			height: 300px
+
+		+r(992)
+			height: 250px
+
+		+r(767)
+			height: 200px
+
+		+r(576)
+			height: 270px
+
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
+
+	&__next,
+	&__prev
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		top: 50%
+		width: 15px
+		height: 15px
+		z-index: 1
+		width: 50px
+		height: 50px
+		background: #3C3C3C
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05)
+		border-radius: 50%
+
+		+r(767)
+			width: 40px
+			height: 40px
+
+		+r(576)
+			width: 30px
+			height: 30px
+
+		svg
+			+r(576)
+				width: 10px
+				height: 10px
+
+	&__next
+		right: 5px
+		transform: translate(0, -50%)
+
+		+r(767)
+			right: 10px
+
+		+r(576)
+			right: 15px
+
+	&__prev
+		left: 5px
+		transform: translate(0, -50%)
+
+		+r(767)
+			left: 10px
+
+		+r(576)
+			left: 15px
+
+.img-comp-container
+	position: relative
+	height: 570px
+
+	+r(1200)
+		height: 400px
+
+	+r(992)
+		height: 300px
+
+	+r(767)
+		height: 240px
+
+	+r(576)
+		height: 220px
+
+	+r(480)
+		height: 200px
+
+.img-comp-img
+	position: absolute
+	width: auto
+	height: auto
+	overflow: hidden
+
+.img-comp-img img
+	display: block
+	vertical-align: middle
+	width: 1260px
+	height: 570px
+	object-fit: cover
+
+	+r(1320)
+		max-width: 1170px
+
+	+r(1200)
+		height: 400px
+		max-width: 932px
+
+	+r(992)
+		max-width: 707px
+		height: 300px
+
+	+r(767)
+		max-width: 516px
+		height: 240px
+
+	+r(576)
+		max-width: 420px
+		height: 220px
+
+	+r(480)
+		max-width: 85vw
+		height: 200px
+
+.img-comp-slider
+	position: absolute
+	z-index: 500
+	cursor: ew-resize
+	width: 6px
+	height: 100%
+	background-color: #fff
+
+	&::before
+		width: 60px
+		height: 40px
+		display: block
+		content: " "
+		background-image:  url(../img/aroow-two.png)
+		background-repeat: no-repeat
+		background-position: center
+		display: flex
+		align-items: center
+		justify-content: center
+		padding-top: 3px
+		position: absolute
+		right: 0
+		border: 1px solid #FFFFFF
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+		+r(767)
+			width: 50px
+			height: 30px
+			background-size: 40px
+
+.services
+
+	&__container
+		position: relative
+		padding: 0 30px
+
+	&__text
+		text-align: center
+		font-size: 24px
+
+		+r(992)
+			font-size: 20px
+
+		span
+			color: #E16F0B
+
+		br
+			+r(992)
+				display: none
+
+	&__wrap
+		padding-bottom: 70px
+		padding-top: 70px
+
+		+r(992)
+			padding-top: 40px
+			padding-bottom: 40px
+
+	&__slider
+		overflow: hidden
+		height: 570px
+
+		+r(1200)
+			height: 400px
+
+		+r(992)
+			height: 300px
+
+		+r(767)
+			height: 240px
+
+		+r(576)
+			height: 220px
+
+		+r(480)
+			height: 200px
+
+	&__next,
+	&__prev
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		top: 50%
+		width: 15px
+		height: 15px
+		z-index: 1
+		width: 50px
+		height: 50px
+		background: #3C3C3C
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05)
+		border-radius: 50%
+
+		+r(767)
+			width: 40px
+			height: 40px
+
+		+r(576)
+			width: 30px
+			height: 30px
+
+		svg
+			+r(576)
+				width: 10px
+				height: 10px
+
+	&__next
+		right: 5px
+		transform: translate(0, -50%)
+
+		+r(767)
+			right: 10px
+
+		+r(576)
+			right: 15px
+
+	&__prev
+		left: 5px
+		transform: translate(0, -50%)
+
+		+r(767)
+			left: 10px
+
+		+r(576)
+			left: 15px
+
+
